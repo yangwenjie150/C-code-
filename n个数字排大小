@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int a[100];
+	int i,j;
+	int n;
+	printf("请输入需要排序的整数个数（不超过100个）：");
+	scanf("%d", &n);
+	printf("请输入需要排序的整数（共%d个）：",n);
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	for (j = 0;j<n-1; j++)
+	{
+		for (i = 0; i < n-j-1; i++)
+		{
+			if (a[i] < a[i + 1])
+			{
+				int j = a[i + 1];
+				a[i + 1] = a[i];
+				a[i] = j;
+			}
+		}
+	}
+	printf("\n输出排序后的数：");
+	for (i = 0; i < n; i++){
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+	return 0;
+}
